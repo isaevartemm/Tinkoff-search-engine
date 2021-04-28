@@ -14,15 +14,16 @@ def index():
         query = ''
     documents = retrieve(query)
     documents = sorted(documents, key=lambda doc: -score(query, doc))
-    results = [doc.format(query)+['%.2f' % score(query, doc)] for doc in documents] 
+    results = [doc.format(query)+['%.2f' % score(query, doc)] for doc in documents]
+
     return render_template(
         'index.html',
         time="%.2f" % (time()-start_time),
         query=query,
-        search_engine_name='Yandex',
+        search_engine_name='Google',
         results=results
     )
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=80)
+    app.run(debug=True)
