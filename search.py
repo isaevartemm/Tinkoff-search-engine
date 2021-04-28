@@ -20,6 +20,7 @@ index = []
 
 
 def build_index():
+    # данные взяты https://www.kaggle.com/neisse/scrapped-lyrics-from-6-genres
     # спасибо @atlant63 за препроцессинг
 
     artist_df = pd.read_csv('artists-data.csv')
